@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jQuery Boilerplate</title>
+		<link rel="stylesheet" type="text/css" href="../src/jquery.timeline.css" />
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="../src/jquery-ui.js"></script>
+		<script src="../src/jquery.timeline.js"></script>
+		<style type="text/css">
+			body {
+				font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-size: 14px;
+				line-height: 1.42857143;
+				color: #58666e;
+				background-color: #efefef;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="element"></div>
+		
+		<div>
+			<a href="javascript:void(0);" id="add">Add More</a>
+		</div>
+		
+		<script>
+			$(function() {
+				$("#element").timeline({
+					data: [
+						{time: new Date(),
+							color: '#555',
+							css: 'success',
+							content: 'Hello Timeline'}
+					]
+				});
+
+
+				$("#add").click(function(){
+
+						$("#element").timeline("add",
+							[
+								{	time: new Date(),
+									css: 'success',
+									content: 'Hello Again'}
+							]
+						 );
+				});
+
+			});
+
+
+
+		</script>
+	</body>
+</html>
